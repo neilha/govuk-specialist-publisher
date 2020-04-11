@@ -1,0 +1,58 @@
+<div class="col-md-4">
+<% 
+=begin %>  
+  <%= render partial: 'shared/govspeak_help' %>
+<% 
+=end %>  
+  
+  <h2>Attachments</h2>
+
+  <% if @document.publication_state %>
+      <%= link_to "Add attachment", edit_document_path(@document) %>
+  <% else %>
+      <p>To add an attachment, please save the draft first.</p>
+  <% end %>
+
+  <ul class="attachments">
+        <li class="attachment">
+          <span class="title attachment-line">This is an attachment</span>
+          <span class="attachment-line"> [InlineAttachment:filename.pdf] </span>
+          <%= link_to "edit", edit_document_path(@document),
+                      class: "btn btn-warning"
+          %>
+          <%= button_to("delete", edit_document_path(@document),
+                        method: "delete",
+                        class: "btn btn-danger",
+                        form_class: "attachment-button",
+                        data: {confirm: "This will delete This is an attachment. Are you sure?"})
+          %>
+        </li>
+        <li class="attachment">
+          <span class="title attachment-line">This is an attachment</span>
+          <span class="attachment-line"> [InlineAttachment:filename.pdf] </span>
+          <%= link_to "edit", edit_document_path(@document),
+                      class: "btn btn-warning"
+          %>
+          <%= button_to("delete", edit_document_path(@document),
+                        method: "delete",
+                        class: "btn btn-danger",
+                        form_class: "attachment-button",
+                        data: {confirm: "This will delete This is an attachment. Are you sure?"})
+          %>
+        </li>
+        <li class="attachment">
+          <span class="title attachment-line">This is an attachment</span>
+          <span class="attachment-line"> [InlineAttachment:filename.pdf] </span>
+          <%= link_to "edit", edit_document_path(@document),
+                      class: "btn btn-warning"
+          %>
+          <%= button_to("delete", edit_document_path(@document),
+                        method: "delete",
+                        class: "btn btn-danger",
+                        form_class: "attachment-button",
+                        data: {confirm: "This will delete This is an attachment. Are you sure?"})
+          %>
+        </li>                
+  </ul>
+
+</div>

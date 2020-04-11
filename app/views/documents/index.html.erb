@@ -1,0 +1,29 @@
+<h1 class="page-header">Documents</h1>
+
+<div class="row">
+  <div class="sidebar col-md-3">
+    <%= link_to "Add another document", new_document_path, class: 'action-link' %>
+    <%= form_tag(documents_path, method: :get, class: "add-vertical-margins well") do %>
+      <%= label_tag "query", "Search" %>
+      <%= text_field_tag("query", params[:query], class: "form-control add-bottom-margin") %>
+      <%= submit_tag "Search", name: nil, class: "btn btn-default" %>
+    <% end %>
+  </div>
+
+  <div class="col-md-9">
+    <% if !@documents.empty? %>
+      <ul class="document-list">
+        <%= render partial: 'document', collection: @documents %>
+      </ul>
+<% 
+=begin %>      
+      <%= paginate @documents, :theme => 'twitter-bootstrap-3' %>  
+<% 
+=end %>      
+    <% elsif @query %>
+      <p class="no-content no-content-bordered">Your search – <%= @query %> – did not match any documents.</p>
+    <% else %>
+      <p class="no-content no-content-bordered">No documents available.</p>
+    <% end %>
+  </div>  
+</div>

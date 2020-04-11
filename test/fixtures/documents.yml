@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  update_type: MyString
+  base_path: MyString
+  body: MyText
+  summary: MyText
+
+two:
+  title: MyString
+  update_type: MyString
+  base_path: MyString
+  body: MyText
+  summary: MyText

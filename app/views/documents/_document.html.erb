@@ -1,0 +1,11 @@
+<li class="document">
+  <%= link_to document.title, document_path(document), class: 'document-title' %>
+  <ul class="metadata">
+    <% if document.updated_at %>
+      <li class="text-muted last-edited-at">Updated <%= time_ago_in_words(document.updated_at) %> ago</li>
+    <% end %> 
+    <li>
+      <%= state_for_frontend(document) %>
+    </li>
+  </ul>
+</li>
